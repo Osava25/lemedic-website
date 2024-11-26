@@ -1,0 +1,63 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from "astro:assets";
+import logoSimbolo from '../img/logo/logosimbolo-le-medic.png'
+const { aptoImg, patchAptoImg, aptoAlt, aptoPrecio, tipoConsult, metrosConsult } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/img/planos/*.{jpeg,jpg,png,gif,webp}')
+if (!images[aptoImg]) throw new Error(`"${aptoImg}" does not exist in glob: "src/img/planos/*.{jpeg,jpg,png,gif,webp}"`);
+---
+<section class="xl:w-full">
+    <div class="flex flex-wrap xl:w-[1280px] xl:mx-auto md:flex-row-reverse px-4 xl:px-8 my-10 justify-center">
+        <div class="md:w-1/2 flex flex-wrap content-center">
+            <a href={patchAptoImg} data-fancybox data-caption="Planos Le Medic">
+                <Image src={images[aptoImg]()} alt={aptoAlt} />
+            </a>
+            <p class="text-[0.7rem] text-gris-lemedic-300">*Distribución sugerida</p>
+        </div>
+        <div class="flex flex-col items-center md:items-start md:w-1/2">
+            <p class="flex font-[dm-serif-display] justify-evenly text-[1.7rem] lg:text-5xl py-4">
+                <Image src={logoSimbolo} class="mr-3 w-14 lg:w-24" alt="Logo Le Medic"/>
+                <span class="text-verde-lemedic-300 mr-2">{tipoConsult} </span><span class="text-gris-lemedic-200"> / {metrosConsult}</span>  
+            </p>
+            <div class="mt-4">
+                <p class="inline-block bg-verde-lemedic-300 px-2 text-white text-center uppercase tracking-widest font-bold text-2xl">{aptoPrecio}</p>
+            </div>
+            <div class="p-4">
+                <ul class="list-disc text-gris-lemedic-300">
+                    <slot/>
+                </ul>
+            </div>
+            <button name="contacto" class="button-more-info bg-verde-lemedic-200 px-6 py-2 rounded-full mt-6 text-white text-lg">Quiero más información</button>
+        </div>
+    </div>
+</section>
+<!-- Codigo FANCYBOX gallery -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+<script is:inline>
+    Fancybox.bind("[data-fancybox]", {
+        // Custom options for all galleries
+        groupAttr: false,
+    });
+</script>
+<!-- Fin codigo FANCYBOX -->
+<script>
+    // Encuentra todos los botones con la clase `button-more-info` en la página.
+    const buttonMoreInfo = document.querySelectorAll("button.button-more-info")
+    
+    // Maneja los clics en cada botón.
+    buttonMoreInfo.forEach((button)=>{
+        button.addEventListener("click", () => {
+            if (window.matchMedia("(max-width: 768px)").matches) {
+                window.scrollTo({
+                    top: document.getElementById("contacto").offsetTop - 85 // Obtengo nombre del ID por medio del Name
+                });
+            }
+            else {
+                window.scrollTo({
+                    top: document.getElementById("contacto").offsetTop - 60 // Obtengo nombre del ID por medio del Name
+                });
+            }  
+        });
+    });
+</script>

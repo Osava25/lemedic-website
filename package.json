@@ -1,0 +1,20 @@
+{
+  "name": "miradordelpuerto-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.2",
+    "@fancyapps/ui": "^5.0.36",
+    "@fontsource-variable/montserrat": "^5.0.19",
+    "astro": "^4.16.8",
+    "intl-tel-input": "^24.4.0",
+    "tailwindcss": "^3.4.6"
+  }
+}

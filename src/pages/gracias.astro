@@ -1,0 +1,40 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import { Image } from "astro:assets";
+import bgImageDesktop from "../img/slider/slide-desktop-lemedic-min.jpg";
+import imgHeaderGracias from "../img/gracias/gracias_mirador_pc2.jpg";
+import imgDescargaBrochure from "../img/gracias/descarga-brochure-final.png";
+import imgLogoMetropoli from "../img/logo/logo-metropoli-transp-600.png"
+---
+<DefaultLayout>
+    <div class="w-full">
+        <Image src={bgImageDesktop} class="object-cover" alt="Gracias Le Medic"/>
+    </div>
+    <section class="py-3 mt-10 xl:w-[1280px] mx-auto">
+        <h1 class="mx-auto text-center text-3xl font-bold">!Hemos recibidos tus datos</h1>
+        <p class="mx-auto text-center text-xl mt-6">Pronto estaremos en contacto con usted para darle más información sobre Le Medic</p>
+    </section>
+    <section class="bg-gray-200 py-12 mt-12">
+        <div class="flex flex-wrap w-full lg:w-[980px] mx-auto">
+            <div class="w-full lg:w-1/2 px-6 flex items-center">
+                <p class="text-xl text-gray-600">Mirador es desarrollado por Metropoli s.a. con más de 40 años construyendo mejores proyectos de mar</p>
+            </div>
+            <div class="w-full lg:w-1/2 px-6">
+                <Image class="w-56 mx-auto" src={imgLogoMetropoli} alt="Logo Metropoli" />
+            </div>
+        </div>
+    </section>
+    <section class="py-12">
+        <div class="flex flex-wrap w-full lg:w-[980px] mx-auto">
+            <div class="w-full lg:w-1/2 flex justify-center">
+                <a href="/docs/terminos-mirador.pdf" target="_blank"><p>Términos y condiciones</p></a>
+            </div>
+            <div class="w-full lg:w-1/2 flex justify-center">
+                <a href="/docs/politicas-mirador.pdf" target="_blank"><p>Políticas de privacidad</p></a>
+            </div>
+        </div>
+    </section>
+</DefaultLayout>
+<!-- Script optimizadores de youtube y vimeo -->
+<script type="module" is:inline src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"></script>
+<script type="module" is:inline src="https://cdn.jsdelivr.net/npm/lite-vimeo-embed/+esm"></script>

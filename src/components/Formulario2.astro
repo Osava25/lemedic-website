@@ -1,0 +1,308 @@
+---
+const { idForm, idPresuInput, idAptoInput, idNameInput, idLastnameInput, idEmailInput, idPhoneInput, idCityInput, idCheckedCheckbox } = Astro.props
+---
+
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <h2
+            class="text-center text-2xl font-normal leading-6 text-azul-oscuro-mirador"
+        >
+            Déjanos tus datos y recibe un <b>Descuento</b> en el valor del apartamento
+        </h2>
+    </div>
+
+    <div class="mt-6 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form id={ idForm } class="form-mirador space-y-2" action="#" method="POST">
+            <div class="grid grid-cols-1 sm:grid-cols-6 gap-x-0 gap-y-3 sm:gap-3">
+                <div class="col-span-1 sm:col-span-full">
+                        <select
+                            id={idPresuInput}
+                            name="presuvivienda"
+                            autocomplete=""
+                            class="select-css block w-full rounded-md border-0 px-1.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-azul-oscuro-mirador sm:text-sm sm:leading-6"
+                        >
+                            <option selected>Cuál es tu presupuesto total para el apartamento?</option
+                            >
+                            <option value="420-500">Entre $420 y $500 Millones</option>
+                            <option value="500-600">Entre $500 y $600 Millones</option>
+                            <option value="600-mas">Más de $600 Millones</option>
+                        </select>
+                        <span id="errorPresu" class="errorPresu text-red-500 text-xs hidden">Debes escoger un presupuesto</span>
+                </div>
+                <div class="col-span-full">
+                        <select
+                            id={idAptoInput}
+                            name="aptopara"
+                            autocomplete=""
+                            class="select-css block w-full rounded-md border-0 px-1.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-azul-oscuro-mirador sm:text-sm sm:leading-6"
+                        >
+                            <option selected>Deseas tu apartamento para?</option>
+                            <option value="vivir">Vivir</option>
+                            <option value="primera-vivienda">Primera vivienda</option>
+                            <option value="inversion">Inversión</option>
+                        </select>
+                </div>
+                <div class="col-span-3">
+                    <input
+                        id={idNameInput}
+                        name="nombre"
+                        placeholder="Nombre"
+                        type="text"
+                        autocomplete="Nombre"
+                        class="w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-azul-oscuro-mirador sm:text-sm sm:leading-6"
+                    />
+                    <span id="errorNombre" class="errorNombre text-red-500 text-xs hidden">Debes colocar tu nombre</span>
+                </div>
+                <div class="col-span-3">
+                    <input
+                        id={idLastnameInput}
+                        name="apellidos"
+                        placeholder="Apellidos"
+                        type="text"
+                        autocomplete="Apellidos"
+                        class="w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-azul-oscuro-mirador sm:text-sm sm:leading-6"
+                    />
+                    <span id="errorApellido" class="text-red-500 text-xs hidden">Debes colocar tu apellido</span>
+                </div>
+                <div class="col-span-full">
+                    <input
+                        id={idEmailInput}
+                        name="email"
+                        placeholder="Correo Electrónico"
+                        type="email"
+                        autocomplete="email"
+                        class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-azul-oscuro-mirador sm:text-sm sm:leading-6"
+                    />
+                    <span id="errorEmail" class="errorEmail text-red-500 text-xs hidden">Coloca un email valido</span>
+                </div>
+
+                <div class="col-span-3">
+                        <input
+                            type="tel"
+                            name="phone"
+                            id={idPhoneInput}
+                            class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block ps-10 p-1.5"
+                        />
+                        <span id="errorPhone" class="errorPhone text-red-500 text-xs hidden"></span>
+                </div>
+                <div class="col-span-3">    
+                    <input
+                        id={idCityInput}
+                        name="ciudad"
+                        placeholder="Ciudad"
+                        type="text"
+                        autocomplete="Ciudad"
+                        class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-azul-oscuro-mirador sm:text-sm sm:leading-6"
+                    />
+                    <span id="errorCiudad" class="errorCiudad text-red-500 text-xs hidden">Coloca una ciudad valida</span>
+                </div>
+            </div>    
+            <div>
+                <button
+                    type="submit"
+                    class="flex w-full justify-center rounded-md bg-azul-oscuro-mirador px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#32518e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >Enviar</button
+                >
+            </div>
+            <div class="flex items-center">
+                <input id={idCheckedCheckbox} name="checkterms" type="checkbox" value="" class="w-4 h-4 text-azul-oscuro-mirador bg-gray-100 border-gray-300 rounded focus:ring-azul-oscuro-mirador dark:focus:ring-azul-oscuro-mirador dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                <label for="checked-checkbox" class="ms-2 text-sm text-gray-600">He leído y acepto la política de privacidad</label>
+            </div>
+            <span id="errorCheck" class="text-red-500 text-xs hidden">Acepta los términos y condiciones</span>
+        </form>
+    </div>
+</div>
+<style>
+    .iti {
+        --iti-path-flags-1x: url('../../node_modules/intl-tel-input/build/img/flags.webp');
+        --iti-path-flags-2x: url('../../node_modules/intl-tel-input/build/img/flags@2x.webp');
+        --iti-path-globe-1x: url('../../node_modules/intl-tel-input/build/img/globe.webp');
+        --iti-path-globe-2x: url('../../node_modules/intl-tel-input/build/img/globe@2x.webp');
+    }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.9.3/build/css/intlTelInput.css">
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.9.3/build/js/intlTelInput.min.js"></script>
+
+<!-- Codigo envío datos form a clientify -->
+<script is:inline>
+    var iti // variable que contiene numero con indicativo
+    var form2 = document.getElementById("form2") // id form header
+    console.log('***' + form2)
+    const selectPresu = document.getElementById("presu-vivienda2")
+    const aptoPara = document.getElementById("apto-para2")
+    const email2 = document.getElementById("email2")
+    const termsCheck = document.getElementById('checked-checkbox2')
+    var dataObject // variable global que almacena objeto con datos del form
+
+
+    // codigo de api numeros internacionales
+    window.addEventListener("load", ()=> {
+        const input2 = document.querySelector("#phone2"); // id input phone form 2
+
+        iti = window.intlTelInput(input2, {
+            initialCountry: "co",
+            strictMode: true,
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/js/utils.js",
+            // just for formatting/placeholders etc
+        });
+    })
+    
+    // mensajes de error validacion de formulario
+    let errorPresu = document.querySelector('.errorPresu');
+    let errorNombre = document.querySelector('.errorNombre');
+    let errorApellido = document.querySelector('.errorApellido');
+    let errorPhone = document.querySelector('.errorPhone');
+    let errorEmail = document.querySelector('.errorEmail');
+    let errorCiudad = document.querySelector('.errorCiudad');
+    let errorCheck = document.querySelector('.errorCheck');
+
+    // validacion campo email
+    form2.addEventListener("input", ()=> {
+        if (email2.validity.valid) {
+            errorEmail.innerHTML = ""; // Restablece el contenido del mensaje
+        } else {
+            // Si todavía hay un error, muestra el error exacto
+            errorEmail.classList.remove('hidden')
+        }
+    })
+    
+    form2.addEventListener("submit", onFormSubmit)
+    
+    function onFormSubmit(event) {
+            event.preventDefault(); // Previene el evento submit
+            const formData = new FormData(event.target) // Datos del formulario
+            dataObject = Object.fromEntries(formData.entries()); // Objeto con data de formulario
+            
+            // console.log(dataObject);
+            if( dataObject.nombre == null || dataObject.nombre.length == 0 || /^\s+$/.test(dataObject.nombre) ) { errorNombre.classList.remove('hidden'); console.log(errorNombre); return event.preventDefault();}
+            else if( dataObject.apellidos == null || dataObject.apellidos.length == 0 || /^\s+$/.test(dataObject.apellidos) ) { errorApellido.classList.remove('hidden'); return event.preventDefault();}
+            const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if( (!regexCorreo.test(dataObject.email)) ) { errorEmail.classList.remove('hidden'); return event.preventDefault();}
+            else if( dataObject.ciudad == null || dataObject.ciudad.length == 0 || /^\s+$/.test(dataObject.ciudad) ) { errorCiudad.classList.remove('hidden'); return event.preventDefault();}
+            else if( !termsCheck.checked ) { errorCheck.classList.remove('hidden'); return event.preventDefault();}
+            // sendForm(); // Función para loguearse en clientify y retorno de Token
+        }
+
+        function sendForm() {
+            console.log("Se envió el formulario")
+            //console.log(asunto);
+            
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+            "username": "contacto@ideamosweb.com",
+            "password": "1d34m5sW3b20-23"
+            });
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("https://api.clientify.net/v1/api-auth/obtain_token/", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                //console.log(result)
+                //alert(`El token es: ${result}`)
+                sendContacts(result)
+                //addNote(result)
+                //getUsers(result);
+            })
+            .catch(error => console.log('error', error));
+
+        }
+        function sendContacts(token) {
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Token " + token["token"]);
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "assignment_type": "basic",
+                "autoassignment_users": "fhernandez@metropolisa.com, maraujo@metropolisa.com, kalvarez@metropolisa.com, drincon@metropolisa.com, amejia@metropolisa.com, mvillarreal@metropolisa.com",	
+                "first_name": dataObject.nombre,
+                "last_name": dataObject.apellidos,
+                "phone": iti.getNumber(),
+                "status": "cold-lead",
+                "emails": [
+                        {
+                        "type": 2,
+                        "email": dataObject.email
+                        }
+                ],
+                "contact_source": "landing-miradordelpuerto",	
+                "tags": ["nuevo lead", "https://miradordelpuerto.co", "mirador del puerto", "form landing", dataObject.presuvivienda],
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                body: raw,
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+            fetch("https://api.clientify.net/v1/contacts/", requestOptions)
+                .then(response => response.json())
+                .then(result => { 
+                    //console.log("*** " + result)
+                    addNote(result, token) 
+                })
+                .catch(error => console.log('error', error));
+        }
+
+        function addNote(resultContact, token) {
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Token " + token["token"]);
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "name": "Nuevo Contacto Mirador",
+                "comment": `{
+                    "tags": "esto es una prueba tags"
+                }`
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch(`https://api.clientify.net/v1/contacts/${resultContact["id"]}/note/`, requestOptions)
+            .then(response => response.text())
+            .then(result => automations(resultContact, token))
+            .catch(error => console.log('error', error));
+
+        }
+
+        function automations(result, token) {
+            const idAtomation = "82684"
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Token " + token["token"]);
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "contact_id": result["id"]
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch(`https://api.clientify.net/v1/automations/${idAtomation}/add_contacts/`, requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+        }
+
+</script>
+<!-- Fin Code envío datos a Clientify -->
+
+

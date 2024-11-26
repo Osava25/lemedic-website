@@ -1,0 +1,148 @@
+---
+import { Image } from "astro:assets";
+import LogoWhite from "../img/logo/logo-lemedic-gris.png";
+var logoLeMedic = "/img/logos/logo-lemedic-gris.png"
+---
+<header class="fixed w-full z-50">
+    <nav>
+      <div id="bg-menu-top" class="max-w-full flex flex-wrap lg:flex-nowrap flex-row justify-between items-center mx-auto lg:px-4">
+        <div class="flex justify-between bg-verde-lemedic-300 lg:bg-transparent w-full items-center z-50 py-4 px-8 lg:px-0">
+          <a href="/" class="space-x-3">
+              <img src="/img/logos/logo-lemedic-gris.png" alt="Mirador del Puerto" id="logo-mirador" class="ease-out duration-500 w-[80px] lg:w-[150px]" />
+            </a>
+            <button
+              id="button-hamburguer"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              aria-controls="navbar-default"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"></path>
+              </svg>
+            </button>
+        </div>
+        <div
+          class="hidden w-full lg:block lg:w-auto bg-verde-lemedic-300 lg:mt-0 lg:bg-transparent animate-slideDown lg:animate-none z-10"
+          id="navbar-default"
+        >
+          <ul
+            id="menu-principal"
+            class="menu-mirador flex flex-col lg:flex-row font-semibold tracking-wide mt-4 mb-4 lg:mt-0 lg:mb-0 gap-0 md:gap-6 text-center rounded-lg lg:space-x-8 rtl:space-x-reverse lg:border-0"
+          >
+          <li>
+            <a
+              href="/docs/brochure-lemedic-6-sept-24.pdf"
+              target="_blank"
+              class="block py-2 px-3 w-full rounded md:p-0 text-white md:hover:underline hover:underline hover:text-white md:hover:bg-transparent"
+              aria-current="page">Brochure</button
+            >
+          </a>
+            <li>
+              <button
+                name="consultorios"
+                id="consultorioslink"
+                class="block py-2 px-3 w-full rounded md:p-0 text-white md:hover:underline hover:underlinehover:text-white md:hover:bg-transparent"
+                aria-current="page">Consultorios</button
+              >
+            </li>
+            <li>
+              <button
+                name="apartasuites"
+                id="apartamentoslink"
+                class="block py-2 px-3 w-full rounded md:p-0 text-white md:hover:underline hover:underline hover:text-white md:hover:bg-transparent"
+                >Apartasuites</button
+              >
+            </li>
+            <li>
+              <button
+                name="ubicacion"
+                id="ubicacionlink"
+                class="block py-2 px-3 w-full rounded md:p-0 text-white md:hover:underline hover:underline hover:text-white md:hover:bg-transparent"
+                >Ubicación</button
+              >
+            </li>
+            <li>
+              <button
+                name="clinica"
+                id="entornolink"
+                class="block py-2 px-3 w-full rounded md:p-0 text-white md:hover:underline hover:underline hover:text-white md:hover:bg-transparent"
+                >Clínica</button
+              >
+            </li>
+            <li>
+              <button
+                name="contacto"
+                id="contactolink"
+                class="block py-2 px-3 w-full rounded md:p-0 text-white md:hover:underline hover:underline hover:text-white md:hover:bg-transparent"
+                >Contacto</button
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <script async is:inline>
+    const menuMobile = document.getElementById("navbar-default")
+    const buttonHamburguer = document.getElementById("button-hamburguer")
+    
+    // agrega la clase hidden para esconder el menu al hacer click en el boton hamburguer
+    buttonHamburguer.addEventListener("click", () => {
+      if (menuMobile.classList.contains("hidden")) {
+        menuMobile.classList.remove("hidden")
+      }
+      else {
+        menuMobile.classList.add("hidden")
+      }
+       
+    })
+
+    // Cambio de color fondo menú al ahcer scroll
+    window.addEventListener("scroll", () => {
+      let fixedMenu = document.getElementById("bg-menu-top");
+      let fixedLogo = document.getElementById("logo-mirador");
+
+      fixedMenu.classList.toggle("lg:bg-black/50", window.scrollY > 15) // Agrega clase color bg- al menú
+
+        if (window.matchMedia("(min-width: 1024px)").matches && window.scrollY > 15) {
+          fixedLogo.classList.remove("lg:w-[150px]") // Quita clase tamaño logo
+          fixedLogo.classList.add("lg:w-[50px]") // Agrega clase tamaño logo
+          fixedLogo.setAttribute("src", "/img/logos/logosimbolo-gris-lemedic.png")
+        }
+        else {
+          fixedLogo.classList.remove("lg:w-[50px]") // Quita clase tamaño logo
+          fixedLogo.classList.add("lg:w-[150px]") // Agrega clase tamaño logo
+          fixedLogo.setAttribute("src", "/img/logos/logo-lemedic-gris.png")
+        }
+    });
+
+    // Scroll To Sections and hidden menu
+    document.getElementById("menu-principal").addEventListener("click",(e) => {
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        window.scrollTo({
+            top: document.getElementById(`${e.target.name}`).offsetTop - 85 // Obtengo nombre del ID por medio del Name
+        });
+      }
+      else {
+        window.scrollTo({
+            top: document.getElementById(`${e.target.name}`).offsetTop - 60 // Obtengo nombre del ID por medio del Name
+        });
+      }  
+
+        menuMobile.classList.add("hidden") // agrega clase hidden para esconder el menu cuando se hace click
+    });
+  </script>

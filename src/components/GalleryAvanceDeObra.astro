@@ -1,0 +1,21 @@
+---
+const { videoPath, urlImgPath } = Astro.props;
+---
+<a href={videoPath} data-fancybox="gallery-d" data-caption="Avance de Obra Mirador del Puerto Junio 2024">
+    <div class="w-full lg:w-[600px] mx-auto my-0 lg:my-8 relative">
+        <i class="fa-solid fa-circle-play"></i>
+        <img class="w-full lg:w-[600px] h-auto block my-3 lg:my-30 mx-auto border-azul-oscuro-mirador border p-2" src={urlImgPath}  />
+    </div>
+</a>
+<slot />
+
+<!-- Codigo FANCYBOX gallery -->
+<script is:inline src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+<script is:inline>
+    Fancybox.bind("[data-fancybox]", {
+        // Custom options for all galleries
+        groupAttr: false,
+    });
+</script>
+<!-- Fin codigo FANCYBOX -->

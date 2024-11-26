@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import bgImageDesktop from "../img/slider/banner-avances-escritorio.jpg";
+import bgImageMobile from "../img/slider/comunes-mirador1.jpeg" 
+---
+<section class="h-[80vh] lg:h-full w-full flex items-center lg:items-end justify-center flex-col flex-wrap lg:before:content-[''] lg:before:absolute lg:before:top-0 lg:before:left-0 lg:before:w-full lg:before:h-80 lg:before:bg-gradient-to-b from-[#030303db] to-[#00000000]">
+    <Image src={bgImageDesktop} alt="Vista Principal" class="hidden lg:block object-cover w-full" />
+    <Image src={bgImageMobile} alt="" class="lg:hidden object-cover object-left h-[80vh] w-full" />
+    <!-- Texto sobre imagenes Slider -->
+    <div class="hidden lg:block absolute right-7">
+        <h1 class="font-kepler-std text-white text-6xl drop-shadow-3xl text-right leading-snug">Avances<br>de obra  <br><b>Mirador del Puerto</b> </h1>
+    </div>
+    <div class="lg:hidden absolute flex flex-col items-center">
+        <h1 class="font-kepler-std text-white drop-shadow-3xl text-center text-4xl">Avances<br>de obra <br><b>Mirador del Puerto</b></h1>
+    </div>
+</section>

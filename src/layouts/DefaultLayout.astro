@@ -1,0 +1,147 @@
+---
+// Supports weights 100-900
+import "@fontsource-variable/montserrat";
+import Menu from "../components/Menu.astro";
+import Image from "astro/components/Image.astro";
+import imgSocial from "../img/slider/slide-desktop-lemedic-min.jpg"
+const waClientify = import.meta.env.PUBLIC_WACLIENTIFY
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Nuevo epicentro Médico Premium diseñado para transformar la experiencia de salud y bienestar en Barranquilla Colombia."
+    />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Le Medic | Centro Médico Premium | Nuevo proyecto"
+    />
+    <meta
+      property="og:description"
+      content="Nuevo epicentro Médico Premium diseñado para transformar la experiencia de salud y bienestar en Barranquilla Colombia."
+    />
+    <meta property="og:url" content="https://lemedic.co/" />
+    <meta
+      property="og:site_name"
+      content="Le Medic | Centro Médico Premium | Nuevo proyecto"
+    />
+    <meta
+      property="og:image"
+      content="/slide-desktop-lemedic-min.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Le Medic | Centro Médico Premium</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+  </head>
+  <body class="overflow-x-hidden">
+    <!-- HTML aceptación de Cookies -->
+    <!-- <div id="cookieConsent"></div> -->
+    <Menu />
+    <hr class="lg:hidden block w-10/12 text-white absolute top-24 mx-[8%]" />
+    <slot />
+     <!-- Boton Telefono flotante Movil -->
+     <!-- <div class="fixed left-3 bottom-20 md:hidden">
+        <a target="_blank" href="tel:+573001631727"><div class="bg-azul-claro-mirador px-7 py-4 mt-8 text-white rounded-3xl font-bold">Llámanos</div></a>
+    </div> -->
+  <!-- código WA clintify -->
+   <!-- fin código WA clintify -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"
+    ></script>
+   
+  </body>
+  <!-- JS Modulo aceptación de cookies -->
+  
+</html>
+
+<style is:global>
+  @font-face {
+    font-family: "dm-serif-display";
+    src: url("/fonts/dm-serif-display/DMSerifDisplay-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    font-family: "Montserrat Variable", sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  /* Estilos campo select en formulario */
+  .select-css {
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+      linear-gradient(to bottom, #ffffff 0%,#f7f7f7 100%);
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+  }
+  .select-css::-ms-expand {
+    display: none;
+  }
+    /* Fin Estilos campo select en formulario */ 
+  
+  /*CSS Modulo aceptacion de cookie*/
+.cookie-consent {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: #333333cf;
+    color: #fff;
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999999;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.cookie-message p {
+    display: inline-block;
+    margin: 0;
+    padding: 0 10px 0 0;
+    flex: 1;
+}
+
+.cookie-message p a {
+    color: #94f391;
+}
+
+.btn-accept {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.btn-no-accept {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 9px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-accept:hover {
+    background-color: #218838;
+}
+/*Fin CSS Modulo aceptacion de cookie*/  
+
+</style>
+

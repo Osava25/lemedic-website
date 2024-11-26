@@ -1,0 +1,70 @@
+---
+import { Image } from "astro:assets";
+import logoMiradorColor from "../img/logo/logo-mirador-color.png";
+import logoLeMedicColor from "../img/logo/logo-lemedic-color-slogan.png";
+import logoFooterIcons from "../img/logo/logos-footer3.jpeg";
+import Formulario from "./Formulario.astro";
+---
+
+<section class="xl:w-full">
+    <div class="my-8 flex flex-wrap items-center xl:w-[1280px] xl:mx-auto">
+        <div class="my-8 mx-auto w-8/12 md:w-1/2 xl:w-6/12 md:px-4 flex flex-wrap xl:flex-col">
+            <Image src={logoLeMedicColor} class="w-full lg:w-6/12" alt="Logo Le Medic" />
+            <div class="flex justify-center xl:justify-start items-center xl:items-start my-6">
+                <Image src="/icons/map-pin36-verde.svg" class="pr-4" alt="Ubicacion" width="42" height="42" />
+                <div>
+                    <span class="px-4 mb-2 bg-verde-lemedic-200 text-white rounded-md font-bold inline-block">Punto de atención</span>
+                    <p class="font-light">
+                        Cra 24 No. 1A - 24 BC Empresarial- Primer piso local 9 <br>
+                        Puerto Colombia, Atlántico.
+                    </p>
+
+                </div>
+            </div>
+            <div class="flex justify-start items-start">
+                <img class="mr-4" src="/icons/device-mobile36-verde.svg" alt="Celular" />
+                <a href="tel:+573205719279"><p class="underline font-light text-azul-oscuro-mirador">+57 320 5719279</p></a>
+            </div>
+            <div class="flex justify-center md:justify-start w-full flex-wrap flex-row mt-8">
+                <div class="mr-2">
+                    <a target="_blank" href="https://www.instagram.com/constructora_metropoli"><img src="/icons/brand-instagram32.svg" width="36" alt="Instagram" /></a>
+                </div>
+                <div class="mr-2">
+                    <a target="_blank" href="https://www.facebook.com/ConstructoraMetropolisa?mibextid=LQQJ4d"><img src="/icons/brand-facebook32.svg" width="36" alt="Facebook" /></a>
+                </div>
+                <div class="mr-2">
+                    <a target="_blank" href="https://www.youtube.com/@MetropoliSA"><img src="/icons/brand-youtube32.svg" width="36" alt="Youtube" /></a>
+                </div>
+            </div>
+        </div>
+        <div id="contacto" class="md:w-1/2 w-full">
+            <div class="w-full">
+                <!-- Codigo form nativo -->
+                <Formulario
+                    idForm="form2" 
+                    idInmuebleInput="tipo-inmueble2"
+                    idNameInput="name2"
+                    idLastnameInput="apellidos2"
+                    idEmailInput="email2"
+                    idPhoneInput="phone2"
+                    idCityInput="ciudad2"
+                    idButtomSubmit="button-submit2"
+				    idPreloader="form-spinner2"
+                    idCheckedCheckbox="checked-checkbox2"
+                    errorNombre="error-nombre2"
+                    errorApellido="error-apellido2"
+                    errorEmail="error-email2"
+                    errorCiudad="error-ciudad2"
+                    errorCheck="error-check2"
+			    />
+                <!-- Codigo formulario oficial Clientify -->
+                <!-- <script is:inline type="text/javascript" src="https://api.clientify.net/web-marketing/superforms/script/213518.js"></script> -->
+            </div>
+        </div>
+        <Image class="xl:w-[580px] xl:mx-auto" src={logoFooterIcons} alt="Logos Metropoli" />
+            <div class="flex flex-col items-center justify-center w-full my-6">
+                <a target="_blank" href="/docs/terminos-mirador.pdf" class="underline text-center">Términos y condiciones</a>
+                <a target="_blank" href="/docs/politicas-mirador.pdf" class="underline text-center">Políticas de privacidad</a>
+            </div>
+    </div>
+</section>

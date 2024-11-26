@@ -1,0 +1,701 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Formulario from "../components/Formulario.astro";
+import BarraSeparadora from "../components/BarraSeparadora.astro";
+import SliderGallery from "../components/SliderGallery.astro";
+import SliderGalleryAptos from "../components/SliderGalleryAptos.astro";
+import FeatureSlider from "../components/FeatureSlider.astro";
+import ZonasComunes from "../components/ZonasComunes.astro";
+import { Image } from "astro:assets";
+import logoSimbolo from "../img/logo/logosimbolo-le-medic.png";
+import InfoAptos from "../components/InfoAptos.astro";
+import clinicarPortoAzzul from "../img/clinica-porto-azul-min.jpg";
+// Img iconos
+import lobby from "../img/iconos/lobby.png";
+import salonEventos from "../img/iconos/eventos-medicos.png";
+import auditorio from "../img/iconos/auditorio-premium.png";
+import zonaCafe from "../img/iconos/zona-cafe-lemedic.png";
+import vipCoworking from "../img/iconos/vip-skylounge.png";
+import salaEspera from "../img/iconos/sala-de-espera.png";
+import innoConsultorios from "../img/iconos/innovadores.png";
+import interiorismo from "../img/iconos/interiorismo.png";
+import certEdge from "../img/iconos/edge.png";
+import clinica from "../img/iconos/clinica.png";
+import comedor from "../img/iconos/comedor.png";
+import cirVehicular from "../img/iconos/cir-vehicular.png";
+import ascensoresPremium from "../img/iconos/ascensores.png";
+import ascensoresCami from "../img/iconos/ascensores-camilleros.png";
+import parqueaderos from "../img/iconos/parqueadores.png";
+import sistemaAa from "../img/iconos/sistema-aa.png";
+
+// Img section Edge
+import logoEdge from "../img/edge/edge-logo.png";
+import efiMat from "../img/edge/edge-eficiencia-materiales.png";
+import ahoEner from "../img/edge/edge-ahorro-energetico.png";
+import ahoAgua from "../img/edge/edge-ahorro-agua.png";
+import logoMetropoli from "../img/logo/logo-metropoli-transp-600.png";
+
+import Sectores from "../components/Sectores.astro";
+import Footer from "../components/Footer.astro";
+const formClientify = import.meta.env.PUBLIC_CLIENTIFY
+---
+
+<DefaultLayout>
+	<!-- Slider principal-->
+	<FeatureSlider/>
+	<!-- Content page -->
+	<div class="w-full p-4 flex flex-col items-center bg-gradient-to-r from-verde-lemedic-100 via-verde-lemedic-200 to-verde-lemedic-300">
+		<h2 class="text-center text-white font-bold xl:text-2xl">
+			BIENVENIDOS AL PRIMER CENTRO MÉDICO PREMIUM DE COLOMBIA
+		</h2>
+	</div>
+	<section class="mt-6 mb-6 pl-16 pr-16">
+		<div>
+			<p class="text-gris-lemedic-300 text-center xl:text-2xl">
+				Descubre modernos consultorios y apartasuites<br>diseñados para ofrecer un ambiente <b>exclusivo para médicos y pacientes.</b>
+			</p>
+		</div>
+	</section>
+	<section class="flex flex-wrap w-full xl:py-6 xl:w-[1280px] xl:mx-auto justify-center items-center">
+		<div class="w-11/12 xl:w-3/5 mx-auto">
+			<!-- Video Principal -->
+			<lite-vimeo videoid="1009914412"></lite-vimeo>
+			<!-- <video controls="">
+				<source src="videos/beach-sunset.mp4" type="video/mp4" />
+			</video> -->
+			<!-- <div style="padding:56.25% 0 0 0;position:relative;"><iframe title="Video Vimeo" src="https://player.vimeo.com/video/845006756?h=bf28863491&color=7EB420&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script> -->
+		</div>
+		<div class="w-full xl:w-2/5">
+			<!-- Codigo form nativo -->
+			<Formulario
+				idForm="form1"
+				idInmuebleInput="tipo-inmueble"
+				idNameInput="name"
+				idLastnameInput="apellidos"
+				idEmailInput="email"
+				idPhoneInput="phone"
+				idCityInput="ciudad"
+				idButtomSubmit="button-submit"
+				idPreloader="form-spinner"
+				idCheckedCheckbox="checked-checkbox"
+				errorNombre="error-nombre"
+				errorApellido="error-apellido"
+				errorEmail="error-email"
+				errorCiudad="error-ciudad"
+				errorCheck="error-check"
+			/>
+			<!-- Codigo formulario oficial Clientify -->
+			<!-- <script is:inline type="text/javascript" src="https://api.clientify.net/web-marketing/superforms/script/213518.js"></script> -->
+		</div>
+	</section>
+	
+	<BarraSeparadora id="consultorios" titleBarra="Consultorios" />
+	<section class="pt-14 pb-6 lg:py-14 px-10">
+		<div>
+			<p class="text-gris-lemedic-300 text-center xl:text-2xl">
+				Le Medic cuenta con <b>consultorios de 36, 41, 55 m2 y áreas flexibles para mayores extensiones</b>, <br>diseñados para lograr la mejor atención a sus pacientes
+			</p>
+		</div>
+	</section>
+	<InfoAptos
+		aptoImg="/src/img/planos/premium-36m2.jpg",
+		patchAptoImg="/img/planos/premium-36m2.jpg",
+		tipoConsult="Premium",
+		metrosConsult="36m²"
+		aptoAlt="Apto tipo 1",
+		aptoPrecio="DESDE $432.000.000",
+	>
+		<li>Pisos en porcelanato</li>
+		<li>Paredes acabadas</li>
+		<li>Muros divisorios</li>
+		<li>Baño</li>
+		<li>Punto de agua adicional</li>
+		<li>Cielo raso</li>
+		<li>Punto de conexión para torre de enfriamiento</li>
+		<li>Cerramiento de acceso principal en vidrio tipo vitrina</li>
+	</InfoAptos>
+	<hr class="w-10/12 text-gray-900 mx-[8%]" />
+	<InfoAptos
+		aptoImg="/src/img/planos/premium-plus-55m2.jpg",
+		patchAptoImg="/img/planos/premium-plus-55m2.jpg",
+		tipoConsult="Premium Plus",
+		metrosConsult="55m²"
+		aptoAlt="Apto tipo 2",
+		aptoPrecio="DESDE $669.000.000",
+	>
+		<li>Pisos en porcelanato</li>
+		<li>Paredes acabadas</li>
+		<li>Muros divisorios</li>
+		<li>Baño</li>
+		<li>Punto de agua adicional</li>
+		<li>Cielo raso</li>
+		<li>Punto de conexión para torre de enfriamiento</li>
+		<li>Cerramiento de acceso principal en vidrio tipo vitrina</li>
+	</InfoAptos>
+	<hr class="w-10/12 text-gray-900 mx-[8%]" />
+	<InfoAptos
+		aptoImg="/src/img/planos/premium-doble-55m2.jpg",
+		patchAptoImg="/img/planos/premium-doble-55m2.jpg",
+		tipoConsult="Premium Doble",
+		metrosConsult="55m²"
+		aptoAlt="Apto tipo 3",
+		aptoPrecio="DESDE $684.000.000",
+	>
+		<li>Pisos en porcelanato</li>
+		<li>Paredes acabadas</li>
+		<li>Muros divisorios</li>
+		<li>Dos baños</li>
+		<li>Dos puntos de agua adicionales</li>
+		<li>Cielo raso</li>
+		<li>Dos puntos de conexión para torre de enfriamiento</li>
+		<li>Cerramiento de acceso principal en vidrio tipo vitrina</li>
+	</InfoAptos>
+	<BarraSeparadora id="apartasuites" titleBarra="Apartasuites" />
+	<section class="pt-14 pb-6 xl:py-14 px-10">
+		<div>
+			<p
+				class="text-gris-lemedic-300 text-center xl:text-2xl"
+			>
+			Le Medic cuenta con <b>apartasuites amobladas de 43 m²</b>, <br>diseñadas para un cómodo descanso con la posibilidad de <br>operarlas a través de renta corta
+			</p>
+		</div>
+	</section>
+	<InfoAptos
+		aptoImg="/src/img/planos/apartasuite-40m2.jpg",
+		patchAptoImg="/img/planos/apartasuite-40m2.jpg"
+		tipoConsult="Apartasuite",
+		metrosConsult="43m²"
+		aptoAlt="Apto tipo 3",
+		aptoPrecio="DESDE $626.400.000",
+	>
+		<li>Cocineta con estufa de dos puestos</li>
+		<li>Campana extractora / Lavaplatos</li>
+		<li>Mueble superior y nevera tipo hotel</li>
+		<li>Punto para lavadora-secadora</li>
+		<li>Closet</li>
+		<li>Mueble para televisor</li>
+		<li>Dos camas queen</li>
+		<li>Mesas de noche</li>
+		<li>Cortina</li>
+		<li>Mesa comedor auxiliar</li>
+		<li>Mobiliario balcón</li>
+		<li>Punto para conexión torre de enfriamiento </li>
+		<p class="text-verde-lemedic-200 font-bold text-xl">*Se entregan amobladas</p>
+	</InfoAptos>
+	<BarraSeparadora id="ubicacion" titleBarra="Ubicación" />
+	<section class="my-6 px-16">
+		<div>
+			<p class="text-gris-lemedic-300 text-center xl:text-xl">
+				<b>Le Medic</b> está ubicado al norte de la ciudad de Barranquilla en la vía al mar
+			</p>
+		</div>
+	</section>
+	<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1xImKOfCRP0sRcViMfwx_esfGQa0dpJg&ehbc=2E312F&noprof=1" width="100%" height="480"></iframe>
+	<BarraSeparadora id="clinica" titleBarra="La Clínica" />
+	<section class="py-14 xl:py-20 px-10 xl:w-[1280px] mx-auto">
+		<div>
+			<p class="text-gris-lemedic-300 text-center xl:text-2xl">
+				Respondiendo a la necesidad de una alta demanda del turismo médico en Colombia nace <b>la clínica de Le Medic</b>, enfocada en procedimientos ambulatorios de primer nivel a través de tecnología avanzada con quirófanos de última generación y áreas de recuperación premium. Las amplias áreas de circulación y accesos exclusivos brindarán comodidad y privacidad a cada paciente. Le Medic combina la tecnología, modernidad y confort para brindar una experiencia de calidad y aumentar el estándar de la atención médica en Colombia. 
+			</p>
+		</div>
+	</section>
+	<SliderGallery />	
+	<section class="xl:w-full py-4">
+		<div class="my-6 xl:py-8 px-10 xl:px-36 xl:w-[1280px] xl:mx-auto">
+			<p class="flex justify-center xl:justify-start font-[dm-serif-display] text-[1.7rem] lg:text-5xl py-4">
+                <Image src={logoSimbolo} class="mr-3 w-14 lg:w-24" alt="Logo Le Medic"/>
+                <span class="text-verde-lemedic-300 mr-2">| Amenities</span>  
+            </p>
+		</div>
+	</section>
+	<section class="xl:w-full">
+		<div class="flex flex-wrap items-center justify-evenly px-4 xl:w-[1280px] xl:mx-auto">
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-full xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={lobby} class="px-6" alt="Eficiencia Materiales" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">LOBBY TRIPLE ALTURA CON ACABADOS DE LUJO</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-full xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={salonEventos} class="px-6" alt="Ahorro Energético" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">SKYLOUNGE / EVENTOS MÉDICOS</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-full xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={auditorio} class="px-6" alt="Ahorro Energético" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">AUDITORIO PREMIUM PLUS CON CAPACIDAD PARA 80 PERSONAS</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-full xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={zonaCafe} class="px-6" alt="Eficiencia Materiales" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">ZONA CAFÉ LE MEDIC</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-full xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={comedor} class="px-6" alt="Ahorro Energético" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">ZONA <br>COMEDOR STAFF</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-full xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={salaEspera} class="px-6" alt="Ahorro Agua" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">AMPLIAS SALAS DE ESPERA POR PISO</p>
+			</div>
+		</div>
+	</section>
+	<section class="xl:w-full pb-6">
+		<div class="my-6 xl:py-8 xl:px-36 xl:w-[1280px] xl:mx-auto">
+			<p class="flex justify-center xl:justify-start font-[dm-serif-display] text-[1.7rem] lg:text-5xl py-4">
+                <Image src={logoSimbolo} class="mr-3 w-14 lg:w-24" alt="Logo Le Medic"/>
+                <span class="text-verde-lemedic-300 mr-2">| Cualidades Premium</span>  
+            </p>
+		</div>
+	</section>
+	<section class="xl:w-full">
+		<div class="flex flex-wrap items-center justify-evenly px-4 xl:w-[1280px] xl:mx-auto">
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-72 xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={innoConsultorios} class="px-6 xl:px-10" alt="Eficiencia Materiales" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">INNOVADORES CONSULTORIOS VITRINA</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-72 xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={interiorismo} class="px-6 xl:px-10" alt="Ahorro Energético" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">INTERIORISMO BY STUDIO SUR</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-72 xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={certEdge} class="px-6 xl:px-10" alt="Ahorro Agua" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">CERTIFICACIÓN EDGE; EFICIENCIA EN ENERGÍA Y AGUA</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-72 xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={clinica} class="px-6 xl:px-10" alt="Eficiencia Materiales" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">CLÍNICA PARA CIRUGÍAS AMBULATORIAS</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-72 xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={cirVehicular} class="px-6 xl:px-10" alt="Ahorro Agua" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">CIRCULACIÓN VEHICULAR CON 6 CARRILES DE ENTRADA Y SALIDA</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-72 xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={ascensoresPremium} class="px-6 xl:px-10" alt="Ahorro Energético" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">5 ASCENSORES PREMIUM</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-full xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={ascensoresCami} class="px-6 xl:px-10" alt="Eficiencia Materiales" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">2 ASCENSORES TIPO CAMILLEROS</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-full xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={parqueaderos} class="px-6 xl:px-10" alt="Ahorro Energético" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">555 PARQUEADEROS</p>
+			</div>
+			<div class="w-1/2 xl:w-[300px] h-60 md:h-full xl:h-64 px-6 xl:px-10 xl:mx-12">
+				<Image src={sistemaAa} class="px-6 xl:px-10" alt="Ahorro Agua" />
+				<p class="text-xs font-bold text-center text-gris-lemedic-300 mt-4">SISTEMA DE A.A. DE ALTA EFICIENCIA POR TORRES DE ENFRIAMIENTO</p>
+			</div>
+		</div>
+	</section>
+	
+	<BarraSeparadora id="lafirma" titleBarra="Constructora" />
+	<section class="xl:w-full">
+		<div class="mt-6 my-20 px-16 xl:w-[980px] xl:mx-auto xl:px-36">
+			<Image
+				class="w-44 mx-auto"
+				src={logoMetropoli}
+				alt="Logo Metropoli"
+			/>
+			<div class="xl:text-xl">
+				<p class="text-center">
+					<span
+						class="text-verde-metropoli">Metropoli SA</span> construyó la Clínica Porto Azul en el 2013, una compañía líder y referente de la salud en Latinoamérica y actualmente la más grande e importante ubicada en la región Caribe colombiana, el proyecto se desarrolló en 45.000 m2 con amplios y exigentes diseños técnicos.
+				</p>
+			</div>
+		</div>
+	</section>
+	<section class="xl:w-full">
+		<Image src={clinicarPortoAzzul} alt="Clínica Porto Azúl" />
+	</section>
+	<BarraSeparadora titleBarra="Contacto" />
+	<Footer />
+</DefaultLayout>
+
+<!-- Script optimizadores de youtube y vimeo -->
+<script type="module" is:inline src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"></script>
+<script type="module" is:inline src="https://cdn.jsdelivr.net/npm/lite-vimeo-embed/+esm"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@23.9.3/build/css/intlTelInput.css">
+<script async src="https://cdn.jsdelivr.net/npm/intl-tel-input@23.9.3/build/js/intlTelInput.min.js"></script>
+
+<!-- Codigo envío datos form a clientify -->
+<script is:inline>
+
+    var iti // variable que contiene numero con indicativo
+	var iti2 // variable que contiene numero con indicativo form 2
+    const form = document.getElementById("form1") // id form header 
+	const form2 = document.getElementById("form2") // id form foooter 
+    const selectTipoInmu = document.getElementById("tipo-inmueble")
+    const aptoPara = document.getElementById("apto-para")
+    const email = document.getElementById("email")
+	const email2 = document.getElementById("email2")
+    const termsCheck = document.getElementById('checked-checkbox')
+	const termsCheck2 = document.getElementById('checked-checkbox2')
+	const preloader1 = document.getElementById("form-spinner")
+	const preloader2 = document.getElementById("form-spinner2")
+	const buttonSubmit1 = document.getElementById("button-submit")
+	const buttonSubmit2 = document.getElementById("button-submit2")
+    var dataObjectForm1 // variable global que almacena objeto con datos del form
+	var dataObjectForm2 // variable global que almacena objeto con datos del form 2
+
+    // codigo de api numeros internacionales
+    window.addEventListener("load", ()=> {
+        const input = document.querySelector("#phone"); // id input phone form 1
+        const input2 = document.querySelector("#phone2"); // id input phone form 2
+    
+        iti = window.intlTelInput(input, {
+            initialCountry: "co",
+            strictMode: true,
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/js/utils.js",
+            // just for formatting/placeholders etc
+        });
+
+		iti2 = window.intlTelInput(input2, {
+            initialCountry: "co",
+            strictMode: true,
+            utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@24.4.0/build/js/utils.js",
+            // just for formatting/placeholders etc
+        });
+    })
+    
+    // mensajes de error validacion de formulario
+    let errorPresu = document.querySelector('.errorTipoInmueble');
+    let errorNombre = document.querySelector('#error-nombre');
+	let errorNombre2 = document.querySelector('#error-nombre2');
+    let errorApellido = document.querySelector('.errorApellido');
+    let errorPhone = document.querySelector('.errorPhone');
+    let errorEmail = document.querySelector('#error-email');
+	let errorEmail2 = document.querySelector('#error-email2');
+    let errorCiudad = document.querySelector('#error-ciudad');
+	let errorCiudad2 = document.querySelector('#error-ciudad2');
+    let errorCheck = document.querySelector('#error-check');
+	let errorCheck2 = document.querySelector('#error-check2');
+
+
+    // validacion campo email Form 1
+    form.addEventListener("input", ()=> {
+		//console.log(errorEmail.textContent)
+        if (email.validity.valid) {
+            errorEmail.innerHTML = ""; // Restablece el contenido del mensaje
+        } else {
+            // Si todavía hay un error, muestra el error exacto
+            errorEmail.classList.remove('hidden')
+        }
+    })
+	// validacion campo email Form 2
+	form2.addEventListener("input", ()=> {
+		//console.log(errorEmail2.textContent)
+        if (email2.validity.valid) {
+            errorEmail2.innerHTML = ""; // Restablece el contenido del mensaje
+        } else {
+            // Si todavía hay un error, muestra el error exacto
+            errorEmail2.classList.remove('hidden')
+        }
+    })
+
+	// Envío Form 1
+    form.addEventListener("submit", onFormSubmit)
+    
+    function onFormSubmit(event) {
+            event.preventDefault(); // Previene el evento submit
+	
+            var formData = new FormData(event.target) // Datos del formulario
+            dataObjectForm1 = Object.fromEntries(formData.entries()); // Objeto con data de formulario
+            
+            // console.log(dataObject);
+            if( dataObjectForm1.nombre == null || dataObjectForm1.nombre.length == 0 || /^\s+$/.test(dataObjectForm1.nombre) ) { errorNombre.classList.remove('hidden'); console.log(errorNombre); return event.preventDefault();}
+            else if( dataObjectForm1.apellidos == null || dataObjectForm1.apellidos.length == 0 || /^\s+$/.test(dataObjectForm1.apellidos) ) { errorApellido.classList.remove('hidden'); return event.preventDefault();}
+            const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if( (!regexCorreo.test(dataObjectForm1.email)) ) { errorEmail.classList.remove('hidden'); return event.preventDefault();}
+            else if( dataObjectForm1.ciudad == null || dataObjectForm1.ciudad.length == 0 || /^\s+$/.test(dataObjectForm1.ciudad) ) { errorCiudad.classList.remove('hidden'); return event.preventDefault();}
+            else if( !termsCheck.checked ) { errorCheck.classList.remove('hidden'); return event.preventDefault();}
+            sendForm(); // Función para loguearse en clientify y retorno de Token
+        }
+
+        function sendForm() {
+            console.log("Se envió el formulario")
+            console.log(iti.getNumber());
+			buttonSubmit1.classList.add("hidden")
+			preloader1.classList.remove("hidden")
+            
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+            "username": "contacto@ideamosweb.com",
+            "password": "1d34m5sW3b20-23"
+            });
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("https://api.clientify.net/v1/api-auth/obtain_token/", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+                //alert(`El token es: ${result}`)
+                sendContacts(result)
+                //addNote(result)
+                //getUsers(result);
+            })
+            .catch(error => console.log('error', error));
+
+        }
+        function sendContacts(token) {
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Token " + token["token"]);
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "assignment_type": "basic",
+                "autoassignment_users": "fhernandez@metropolisa.com, maraujo@metropolisa.com, kalvarez@metropolisa.com, drincon@metropolisa.com, amejia@metropolisa.com, mvillarreal@metropolisa.com",   	
+                "owner": "contacto@ideamosweb.com",
+				"first_name": dataObjectForm1.nombre,
+                "last_name": dataObjectForm1.apellidos,
+                "phone": iti.getNumber(),
+                "status": "cold-lead",
+                "emails": [
+                        {
+                        	"type": 2,
+                        	"email": dataObjectForm1.email
+                        }
+                ],
+				"addresses": [
+						{
+							"type": 2,
+							"city": dataObjectForm1.ciudad,
+						}
+				],
+                "contact_source": "lemedic-website",
+                "tags": ["nuevo lead", "https://lemedic.co", "lemedic landing", dataObjectForm1.tipoinmueble],
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                body: raw,
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+            fetch("https://api.clientify.net/v1/contacts/", requestOptions)
+                .then(response => response.text())
+                .then(result => { 
+                    console.log("*** " + result)
+					window.location.href = '/gracias';
+                    //automations(result, token) 
+                })
+                .catch(error => console.log('error', error));
+        }
+
+        /* function addNote(resultContact, token) {
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Token " + token["token"]);
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "name": "Nuevo Contacto Mirador",
+                "comment": 'This is a test'
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch(`https://api.clientify.net/v1/contacts/${resultContact["id"]}/note/`, requestOptions)
+            .then(response => response.text())
+            .then(result => automations(resultContact, token))
+            .catch(error => console.log('error', error));
+
+        } */
+
+        /* function automations(result, token) {
+            const idAtomation = "82684"
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Token " + token["token"]);
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "contact_id": result["id"]
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch(`https://api.clientify.net/v1/automations/${idAtomation}/add_contacts/`, requestOptions)
+            .then(response => response.text())
+            .then(result => {
+				console.log(result)
+				if(result["success"] == true) {
+					window.location.href = '/gracias';
+				}
+				else {
+					alert("Ha ocurrido un error, intenta nuevamente.")
+				}
+				
+			})				
+            .catch(error => console.log('error', error));
+
+        } */
+
+	// Envío Form 2
+    form2.addEventListener("submit", onFormSubmit2)
+    
+    function onFormSubmit2(event) {
+            event.preventDefault(); // Previene el evento submit
+            var formData = new FormData(event.target) // Datos del formulario
+            dataObjectForm2 = Object.fromEntries(formData.entries()); // Objeto con data de formulario
+            
+            // console.log(dataObject);
+            if( dataObjectForm2.nombre == null || dataObjectForm2.nombre.length == 0 || /^\s+$/.test(dataObjectForm2.nombre) ) { errorNombre2.classList.remove('hidden'); console.log(errorNombre2); return event.preventDefault();}
+            else if( dataObjectForm2.apellidos == null || dataObjectForm2.apellidos.length == 0 || /^\s+$/.test(dataObjectForm2.apellidos) ) { errorApellido2.classList.remove('hidden'); return event.preventDefault();}
+            const regexCorreo2 = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if( (!regexCorreo2.test(dataObjectForm2.email)) ) { errorEmail2.classList.remove('hidden'); return event.preventDefault();}
+            else if( dataObjectForm2.ciudad == null || dataObjectForm2.ciudad.length == 0 || /^\s+$/.test(dataObjectForm2.ciudad) ) { errorCiudad2.classList.remove('hidden'); return event.preventDefault();}
+            else if( !termsCheck2.checked ) { errorCheck2.classList.remove('hidden'); return event.preventDefault();}
+            sendForm2(); // Función para loguearse en clientify y retorno de Token
+        }
+
+        function sendForm2() {
+            console.log("Se envió el formulario")
+            //console.log(asunto);
+			buttonSubmit2.classList.add("hidden")
+			preloader2.classList.remove("hidden")
+            
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+            "username": "contacto@ideamosweb.com",
+            "password": "1d34m5sW3b20-23"
+            });
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("https://api.clientify.net/v1/api-auth/obtain_token/", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+                //alert(`El token es: ${result}`)
+                sendContacts2(result)
+                //addNote(result)
+                //getUsers(result);
+            })
+            .catch(error => console.log('error', error));
+
+        }
+        function sendContacts2(token) {
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Token " + token["token"]);
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "assignment_type": "basic",
+                "autoassignment_users": "fhernandez@metropolisa.com, maraujo@metropolisa.com, kalvarez@metropolisa.com, drincon@metropolisa.com, amejia@metropolisa.com, mvillarreal@metropolisa.com",	
+                "owner": "contacto@ideamosweb.com",
+				"first_name": dataObjectForm2.nombre,
+                "last_name": dataObjectForm2.apellidos,
+                "phone": iti2.getNumber(),
+                "status": "cold-lead",
+                "emails": [
+                        {
+                        "type": 2,
+                        "email": dataObjectForm2.email
+                        }
+                ],
+				"addresses": [
+						{
+							"type": 2,
+							"city": dataObjectForm2.ciudad,
+						}
+				],
+                "contact_source": "lemedic-website",
+                "tags": ["nuevo lead", "https://lemedic.co", "lemedic landing", dataObjectForm2.tipoinmueble],
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                body: raw,
+                headers: myHeaders,
+                redirect: 'follow'
+            };
+
+            fetch("https://api.clientify.net/v1/contacts/", requestOptions)
+                .then(response => response.json())
+                .then(result => { 
+                    //console.log("*** " + result)
+					window.location.href = '/gracias';
+                    //automations(result, token) 
+                })
+                .catch(error => console.log('error', error));
+        }
+
+       /*  function addNote(resultContact, token) {
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Token " + token["token"]);
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "name": "Nuevo Contacto Mirador",
+                "comment": `{
+                    "tags": "esto es una prueba tags"
+                }`
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch(`https://api.clientify.net/v1/contacts/${resultContact["id"]}/note/`, requestOptions)
+            .then(response => response.text())
+            .then(result => automations(resultContact, token))
+            .catch(error => console.log('error', error));
+
+        } */
+
+       /*  function automations(result, token) {
+            const idAtomation = "82684"
+            var myHeaders = new Headers();
+            myHeaders.append("Authorization", "Token " + token["token"]);
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "contact_id": result["id"]
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch(`https://api.clientify.net/v1/automations/${idAtomation}/add_contacts/`, requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+        } */
+
+
+</script>
+<!-- Fin Code envío datos a Clientify -->
+
+
+
+
